@@ -412,7 +412,7 @@ code {
         </tr>
         <tr>
           <td>Underlying model</td>
-          <td>Model-agnostic — routes through Gemini or Perplexity; AlphaXiv for paper Q&amp;A</td>
+          <td>Model-agnostic — routes through Gemini or Perplexity. (Note: Using open models like <code>gpt-oss-120b</code> results in superficial "rubber-stamp" logic)</td>
           <td>Claude Opus 4.6 (proprietary, Anthropic)</td>
           <td>Gemini 3.1 Pro / 2.5 Pro with Deep Think; Deep Research uses Flash or Pro tier</td>
         </tr>
@@ -431,22 +431,16 @@ code {
           <td>Deep Research generates editable multi-page reports with a review plan you approve first</td>
         </tr>
         <tr>
-          <td>Provenance &amp; Tracking</td>
-          <td><strong>Explicit</strong> — Generates dedicated provenance logs detailing search queries, read papers, and verification notes.</td>
-          <td><strong>Implicit</strong> — Relies on conversation history.</td>
-          <td><strong>Implicit</strong> — Citations provided, but search strategy is handled implicitly by the Deep Research agent.</td>
-        </tr>
-        <tr>
           <td>Paper auditing</td>
           <td>Dedicated <code>/audit</code> — compares paper claims vs. code for reproducibility mismatches</td>
           <td>Can analyze paper + code together if uploaded, but no automated pipeline</td>
-          <td>No dedicated audit tool; can cross-verify claims automatically against Drive data</td>
+          <td><strong>Autonomous execution</strong> — When routed through an IDE like Antigravity, it can actively download referenced GitHub repositories (e.g., <code>helper.nb</code>) and verify claims against local mathematical solvers.</td>
         </tr>
         <tr>
           <td>Reproducibility</td>
           <td><span class="str">High</span> — <code>/replicate</code> runs plans in sandboxed Docker; GPU burst via Modal / RunPod</td>
           <td><span class="str">Moderate</span> — code execution available, but no sandbox or GPU burst</td>
-          <td><span class="str">High</span> — Native Python sandbox with automated unit-testing for scientific proofs</td>
+          <td><span class="str">High</span> — Natively runs source code (e.g., <code>wolframscript</code>) to strictly evaluate complex symbolic identities against published results.</td>
         </tr>
 
         <tr class="cat-row"><td colspan="4">Reasoning &amp; synthesis</td></tr>
@@ -454,7 +448,7 @@ code {
           <td>Math reasoning</td>
           <td><strong>Script-Based</strong> — Relies on generating external scripts (e.g., Python/SymPy) to verify trigonometric identities mathematically.</td>
           <td><strong>Intrinsic</strong> — Adaptive extended thinking; strong on rigorous proofs and geometric arguments.</td>
-          <td><strong>Frontier</strong> — Deep Think parallel streams. However, it can hallucinate "algebraic typos" when forced to recursively trace dense trigonometric identities across multiple lemmas without a strict symbolic engine.</td>
+          <td><strong>Script Execution &amp; Integration</strong> — Avoids "hallucinated typos" by actively downloading supplemental Mathematica code and natively evaluating it with <code>FullSimplify[]</code> to achieve absolute verification of complex proofs.</td>
         </tr>
         <tr>
           <td>Synthesis style</td>
@@ -468,31 +462,13 @@ code {
           <td>Execution Speed</td>
           <td><strong>Slow</strong> — Requires time to orchestrate agents, write scripts, execute them locally, and read terminal output.</td>
           <td><strong>Fast</strong> — Single-shot inference with chain-of-thought routing.</td>
-          <td><strong>Variable</strong> — Surface-level checks are fast, but deep recursive verification of referenced lemmas is highly time-consuming.</td>
+          <td><strong>High Efficiency</strong> — Complex, multi-lemma verification relying on external code download and execution runs remarkably fast when routed via Antigravity.</td>
         </tr>
         <tr>
-          <td>Context Burn Rate</td>
-          <td><strong>Extremely High</strong> — Iterative loops burn tokens rapidly.</td>
-          <td><strong>Moderate</strong> — 1:1 input/output token usage.</td>
-          <td><strong>Variable</strong> — Deep recursive checks can spike usage significantly, burning over 10.6% of a 1M context window (~106k tokens) on a single complex task.</td>
-        </tr>
-        <tr>
-          <td>Access &amp; pricing</td>
-          <td>Open source, local CLI; free (bring your own API keys or connect via Antigravity proxy)</td>
-          <td>$20/mo Pro or API at $5 / $25 per M tokens; AWS, Azure, GCP</td>
-          <td>Free tier; Advanced $19.99/mo; Ultra $249.99/mo for Deep Think + Pro research</td>
-        </tr>
-        <tr>
-          <td>Ecosystem</td>
-          <td>Docker, Modal, RunPod; browser / PDF artifact export</td>
-          <td>Web search, code execution, file tools, computer use, MCP (Slack, Drive…)</td>
-          <td>Google Workspace (Docs, Drive, Gmail, Scholar), MCP, Vertex AI</td>
-        </tr>
-        <tr>
-          <td>Best for</td>
-          <td>Rigorous lit reviews, reproducibility audits, paper-to-code verification, automated pipelines</td>
-          <td>Deep reasoning, mathematical proofs, LaTeX work, large-doc synthesis, flexible research</td>
-          <td>Broad multi-source reports, mathematical discovery, Google ecosystem, quick overviews</td>
+          <td>API &amp; Context Burn Rate</td>
+          <td><strong>High Drain</strong> — Multi-agent loops burn tokens rapidly. Exhausted standard API limits in just 2 prompts.</td>
+          <td><strong>Severe Limitations</strong> — Context limits exhaust in minutes. Reaching the limit results in multi-hour lockouts, and starting a new conversation <em>does not reset the limit</em>.</td>
+          <td><strong>Highly Efficient</strong> — Antigravity integration provides a fresh 1M context per session. Complex paper-to-code local verifications burn only 7.0% to 7.2% of the window.</td>
         </tr>
       </tbody>
     </table>
@@ -500,26 +476,26 @@ code {
 
   <div class="anim d6">
     <div class="section-label">Bottom line</div>
-    <h2 class="section-title">When to reach for each</h2>
+    <h2 class="section-title">Final Verdicts</h2>
   </div>
 
   <div class="verdicts">
     <div class="verdict v-teal anim d5">
       <h4>Feynman</h4>
-      <p>Choose when you need a <strong>structured research pipeline</strong>. Workflow guardrails and explicit provenance tracking come built in, allowing for incredibly deep synthesis. However, be prepared for slow execution and massive token burn rates (even simple tasks require generating and running Python/SymPy scripts).</p>
+      <p><strong>Highly Recommended (with a caveat):</strong> Brilliant for structured literature reviews and deep research. However, because it drains API usage quickly, you should strictly use it paired with Gemini via Antigravity, which guarantees a fresh 1M context reset per session.</p>
     </div>
     <div class="verdict v-purple anim d6">
       <h4>Claude Opus 4.6</h4>
-      <p>Choose when you need <strong>raw reasoning power and flexibility</strong> — proving geometric lemmas, reasoning through reviewer comments, debugging LaTeX / TikZ, or synthesizing hundreds of pages in a single context. No preset workflow; maximum adaptability.</p>
+      <p><strong>Impractical for Heavy Workloads:</strong> While it performs well on initial literature reviews, it is crippled by extreme usage constraints. Limits are hit within minutes, users face multi-hour lockouts, and context caps do not refresh on new conversations.</p>
     </div>
     <div class="verdict v-amber anim d7">
-      <h4>Gemini 3.1</h4>
-      <p>Choose when you want <strong>verification & broad discovery</strong> — Deep Research generates polished reports from 100+ sources without burning your API keys. Use Deep Think to stress-test your mathematical lemmas. <strong>Warning:</strong> Be prepared to manually cross-check its work, as deep recursive verification can lead to high context burn and hallucinated algebraic errors.</p>
+      <h4>Gemini 3.1 (via Antigravity)</h4>
+      <p><strong>The Superior Choice for Scientific Auditing:</strong> Excels at complex proof verification. It autonomously locates mathematical dependencies on GitHub, downloads them, and evaluates them natively (e.g., via <code>wolframscript</code>), all while burning only ~7% of its massive context window. <em>(Note: Avoid open models like <code>gpt-oss-120b</code>, which provide false, unverified "rubber-stamp" approvals).</em></p>
     </div>
   </div>
 
   <footer class="footer">
-    Comparison compiled April 2026 <span class="dot">&middot;</span> Built with <a href="https://claude.ai">Claude Opus 4.6</a>
+    Comparison compiled April 2026 <span class="dot">&middot;</span> Refined via Antigravity IDE constraints
   </footer>
 
 </div>
