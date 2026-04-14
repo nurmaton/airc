@@ -420,7 +420,7 @@ code {
         <tr class="cat-row"><td colspan="4">Scientific literature capabilities</td></tr>
         <tr>
           <td>Literature discovery</td>
-          <td>AlphaXiv search + web search (Gemini / Perplexity); session-indexed recall</td>
+          <td>AlphaXiv search + web search; integrates with local IDEs (e.g., Antigravity) to access local files</td>
           <td>Web search + uploaded PDFs; 1M-token context ingests hundreds of pages at once</td>
           <td>Google Scholar + Search + files; Deep Research browses 100+ sources + Native Visual Reasoning over diagrams</td>
         </tr>
@@ -448,19 +448,13 @@ code {
           <td><span class="str">Moderate</span> — code execution available, but no sandbox or GPU burst</td>
           <td><span class="str">High</span> — Native Python sandbox with automated unit-testing for scientific proofs</td>
         </tr>
-        <tr>
-          <td>Citation handling</td>
-          <td>Every claim cited; Verifier agent checks URLs and removes dead links</td>
-          <td>Cites search results inline; no automated dead-link verification</td>
-          <td>Deep Research cites sources; integrated with Google Scholar for metadata verification</td>
-        </tr>
 
         <tr class="cat-row"><td colspan="4">Reasoning &amp; synthesis</td></tr>
         <tr>
           <td>Math reasoning</td>
-          <td>Depends on underlying model; no special math mode</td>
-          <td>Adaptive extended thinking; strong on rigorous proofs and geometric arguments</td>
-          <td><strong>Frontier</strong> — Deep Think parallel streams; symbolic verification for complex geometric arguments (Lean-integrated)</td>
+          <td><strong>Script-Based</strong> — Relies on generating external scripts (e.g., Python/SymPy) to verify trigonometric identities mathematically.</td>
+          <td><strong>Intrinsic</strong> — Adaptive extended thinking; strong on rigorous proofs and geometric arguments.</td>
+          <td><strong>Frontier</strong> — Deep Think parallel streams. However, it can hallucinate "algebraic typos" when forced to recursively trace dense trigonometric identities across multiple lemmas without a strict symbolic engine.</td>
         </tr>
         <tr>
           <td>Synthesis style</td>
@@ -468,23 +462,23 @@ code {
           <td>Conversational, long-form, creative; adapts to user expertise level</td>
           <td>Structured reports exportable to Google Docs; analyzes geometry directly from renders or sketches</td>
         </tr>
-        <tr>
-          <td>Context window</td>
-          <td>Bounded by underlying model; session search for cross-session recall</td>
-          <td>1M tokens (~500 pages of papers in one conversation)</td>
-          <td><strong>2M tokens</strong> standard; Deep Research effectively unbounded via autonomous browsing</td>
-        </tr>
 
         <tr class="cat-row"><td colspan="4">Practical considerations</td></tr>
         <tr>
-          <td>API / Token Consumption</td>
-          <td><strong>Extremely High</strong> — Multi-agent orchestration (e.g., <code>/lit</code>) can exhaust standard Opus/API limits in just 1-2 prompts.</td>
+          <td>Execution Speed</td>
+          <td><strong>Slow</strong> — Requires time to orchestrate agents, write scripts, execute them locally, and read terminal output.</td>
+          <td><strong>Fast</strong> — Single-shot inference with chain-of-thought routing.</td>
+          <td><strong>Variable</strong> — Surface-level checks are fast, but deep recursive verification of referenced lemmas is highly time-consuming.</td>
+        </tr>
+        <tr>
+          <td>Context Burn Rate</td>
+          <td><strong>Extremely High</strong> — Iterative loops burn tokens rapidly.</td>
           <td><strong>Moderate</strong> — 1:1 input/output token usage.</td>
-          <td><strong>Included</strong> — Compute costs for multi-step agents are abstracted into the subscription tier.</td>
+          <td><strong>Variable</strong> — Deep recursive checks can spike usage significantly, burning over 10.6% of a 1M context window (~106k tokens) on a single complex task.</td>
         </tr>
         <tr>
           <td>Access &amp; pricing</td>
-          <td>Open source, local CLI; free (bring your own API keys)</td>
+          <td>Open source, local CLI; free (bring your own API keys or connect via Antigravity proxy)</td>
           <td>$20/mo Pro or API at $5 / $25 per M tokens; AWS, Azure, GCP</td>
           <td>Free tier; Advanced $19.99/mo; Ultra $249.99/mo for Deep Think + Pro research</td>
         </tr>
@@ -512,7 +506,7 @@ code {
   <div class="verdicts">
     <div class="verdict v-teal anim d5">
       <h4>Feynman</h4>
-      <p>Choose when you need a <strong>structured research pipeline</strong>. Workflow guardrails and explicit provenance tracking come built in, allowing for incredibly deep synthesis, but be prepared for massive API token burn rates due to the multi-agent architecture.</p>
+      <p>Choose when you need a <strong>structured research pipeline</strong>. Workflow guardrails and explicit provenance tracking come built in, allowing for incredibly deep synthesis. However, be prepared for slow execution and massive token burn rates (even simple tasks require generating and running Python/SymPy scripts).</p>
     </div>
     <div class="verdict v-purple anim d6">
       <h4>Claude Opus 4.6</h4>
@@ -520,7 +514,7 @@ code {
     </div>
     <div class="verdict v-amber anim d7">
       <h4>Gemini 3.1</h4>
-      <p>Choose when you want <strong>verification & broad discovery</strong> — Deep Research generates polished reports from 100+ sources without burning your API keys. Deep Think pushes into symbolic verification to stress-test your mathematical lemmas.</p>
+      <p>Choose when you want <strong>verification & broad discovery</strong> — Deep Research generates polished reports from 100+ sources without burning your API keys. Use Deep Think to stress-test your mathematical lemmas. <strong>Warning:</strong> Be prepared to manually cross-check its work, as deep recursive verification can lead to high context burn and hallucinated algebraic errors.</p>
     </div>
   </div>
 
