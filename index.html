@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI for Scientific Research — Feynman vs Opus 4.6 vs Gemini 3.1</title>
+<title>Feynman Pipeline: Engine Comparison</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -146,9 +146,9 @@ body::after {
   top: 0; left: 0; right: 0;
   height: 2px;
 }
-.tool-card.feynman::before { background: linear-gradient(90deg, var(--teal), transparent 80%); }
-.tool-card.opus::before { background: linear-gradient(90deg, var(--purple), transparent 80%); }
-.tool-card.gemini::before { background: linear-gradient(90deg, var(--amber), transparent 80%); }
+.tool-card.feynman::before { background: linear-gradient(90deg, var(--purple), transparent 80%); }
+.tool-card.opus::before { background: linear-gradient(90deg, var(--amber), transparent 80%); }
+.tool-card.gemini::before { background: linear-gradient(90deg, var(--teal), transparent 80%); }
 .tc-head {
   display: flex;
   align-items: center;
@@ -162,9 +162,9 @@ body::after {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 500; font-size: 16px;
 }
-.feynman .tc-icon { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(61,222,166,0.15); }
-.opus .tc-icon { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,139,250,0.15); }
-.gemini .tc-icon { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,183,49,0.15); }
+.feynman .tc-icon { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,139,250,0.15); }
+.opus .tc-icon { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,183,49,0.15); }
+.gemini .tc-icon { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(61,222,166,0.15); }
 .tc-head h3 { font-size: 18px; font-weight: 500; }
 .tc-type {
   font-family: 'IBM Plex Mono', monospace;
@@ -347,42 +347,42 @@ code {
   <header class="hero">
     <div class="hero-label anim d1">Comparative analysis <span class="dot">&middot;</span> April 2026</div>
     <h1 class="anim d2">
-      <span class="hl-teal">Feynman</span> vs
-      <span class="hl-purple">Opus 4.6</span> vs
-      <span class="hl-amber">Gemini 3.1</span>
+      <span class="hl-purple">Feynman + Opus</span> vs
+      <span class="hl-amber">Feynman + Gemini</span> vs
+      <span class="hl-teal">Feynman + Open Models</span>
     </h1>
-    <p class="anim d3">Which AI tool best serves scientific literature discovery, analysis, and synthesis? A side-by-side comparison for researchers.</p>
+    <p class="anim d3">Evaluating the underlying engines of a multi-agent research pipeline for tasks involving differential geometry, complex drafting, and code verification.</p>
   </header>
 
   <div class="tools-row">
     <div class="tool-card feynman anim d3">
       <div class="tc-head">
-        <div class="tc-icon">F</div>
-        <h3>Feynman</h3>
+        <div class="tc-icon">O</div>
+        <h3>Feynman + Opus 4.6</h3>
       </div>
-      <div class="tc-type">Open-source research agent</div>
-      <p>A multi-agent CLI tool that reads papers, searches the web, writes drafts, runs experiments, and cites every claim — all locally on your machine. Built on Pi and AlphaXiv.</p>
+      <div class="tc-type">High Reason, High Limit</div>
+      <p>Orchestrating Feynman using Claude Opus 4.6. Excellent for deep structural literature reviews, but constrained heavily by rigid API and context limits.</p>
     </div>
     <div class="tool-card opus anim d4">
       <div class="tc-head">
-        <div class="tc-icon">O</div>
-        <h3>Claude Opus 4.6</h3>
+        <div class="tc-icon">G</div>
+        <h3>Feynman + Gemini 3.1</h3>
       </div>
-      <div class="tc-type">Frontier reasoning model</div>
-      <p>Anthropic's most intelligent LLM with a 1M-token context window, adaptive extended thinking, and deep reasoning — a general-purpose engine you point at research tasks.</p>
+      <div class="tc-type">Autonomous IDE Auditor</div>
+      <p>Orchestrating Feynman via Gemini 3.1 inside the Antigravity IDE. Unlocks autonomous local code execution and massive, refreshing context windows per session.</p>
     </div>
     <div class="tool-card gemini anim d5">
       <div class="tc-head">
-        <div class="tc-icon">G</div>
-        <h3>Gemini 3.1</h3>
+        <div class="tc-icon">M</div>
+        <h3>Feynman + Open Models</h3>
       </div>
-      <div class="tc-type">Multimodal AI + deep research</div>
-      <p>Google DeepMind's frontier model featuring Deep Think mode for symbolic verification and Deep Research for autonomous multi-source geometric and academic report generation.</p>
+      <div class="tc-type">Superficial Processing</div>
+      <p>Orchestrating Feynman using open weights (e.g., gpt-oss-120b). Fast and cheap, but fundamentally lacks the reasoning required for complex mathematical proofs.</p>
     </div>
   </div>
 
   <div class="anim d5">
-    <div class="section-label">Feature-by-feature</div>
+    <div class="section-label">Engine performance metrics</div>
     <h2 class="section-title">Detailed comparison</h2>
   </div>
 
@@ -390,112 +390,66 @@ code {
     <table class="cmp">
       <thead>
         <tr>
-          <th></th>
-          <th>Feynman</th>
-          <th>Claude Opus 4.6</th>
-          <th>Gemini 3.1</th>
+          <th>Metric</th>
+          <th>Feynman + Opus 4.6</th>
+          <th>Feynman + Gemini 3.1 (via Antigravity)</th>
+          <th>Feynman + Open Models (gpt-oss-120b)</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="cat-row"><td colspan="4">Identity &amp; architecture</td></tr>
+        <tr class="cat-row"><td colspan="4">Mathematical &amp; Scientific Rigor</td></tr>
         <tr>
-          <td>Primary role</td>
-          <td>Scientific research agent <span class="pill pill-teal">CLI / local</span></td>
-          <td>General-purpose reasoning engine <span class="pill pill-purple">Chat / API</span></td>
-          <td>Multimodal reasoning + deep research <span class="pill pill-amber">Ecosystem</span></td>
+          <td>Geometric Verification</td>
+          <td>Strong analytical capability, but the multi-agent orchestration struggles to maintain momentum due to API cut-offs before proofs can be fully verified.</td>
+          <td><strong>Frontier Verification</strong> — Actively writes and runs local Python/SymPy scripts to mathematically verify equations, finding absolute truth rather than guessing.</td>
+          <td><strong>The "Rubber-Stamp"</strong> — Provides a superficial "everything is correct" response without actually tracing the logic or running the equations.</td>
         </tr>
         <tr>
-          <td>Architecture</td>
-          <td>Multi-agent pipeline: Researcher, Reviewer, Writer, Verifier orchestrated per query</td>
-          <td>Single monolithic LLM with adaptive thinking, tool use, and context compaction</td>
-          <td>Natively multimodal transformer; Deep Think with parallel hypothesis streams for verification; Deep Research agent layer</td>
-        </tr>
-        <tr>
-          <td>Underlying model</td>
-          <td>Model-agnostic — routes through Gemini or Perplexity. (Note: Using open models like <code>gpt-oss-120b</code> results in superficial "rubber-stamp" logic)</td>
-          <td>Claude Opus 4.6 (proprietary, Anthropic)</td>
-          <td>Gemini 3.1 Pro / 2.5 Pro with Deep Think; Deep Research uses Flash or Pro tier</td>
+          <td>Code Auditing</td>
+          <td>Can analyze code snippets if manually fed into the prompt.</td>
+          <td><strong>Autonomous Code Execution</strong> — Excels at auditing by directly cloning repositories (e.g., downloading <code>helper.nb</code>) and running them via local CLIs like <code>wolframscript</code>.</td>
+          <td>Fails to leverage external code or local environments, relying entirely on synthetic training data to guess the validity of a proof.</td>
         </tr>
 
-        <tr class="cat-row"><td colspan="4">Scientific literature capabilities</td></tr>
+        <tr class="cat-row"><td colspan="4">Infrastructure Constraints</td></tr>
         <tr>
-          <td>Literature discovery</td>
-          <td>AlphaXiv search + web search; integrates with local IDEs (e.g., Antigravity) to access local files</td>
-          <td>Web search + uploaded PDFs; 1M-token context ingests hundreds of pages at once</td>
-          <td>Google Scholar + Search + files; Deep Research browses 100+ sources + Native Visual Reasoning over diagrams</td>
+          <td>Context Window Management</td>
+          <td><strong>Severe Limitations</strong> — Context limits are exhausted in minutes. Starting a new session does not reset the limit, crippling continuous research.</td>
+          <td><strong>Highly Efficient</strong> — Antigravity integration provides a fresh 1M context per session. Complex, multi-lemma code verifications burn only 7.0% to 7.2% of the window.</td>
+          <td><strong>Inefficient</strong> — Burned ~25.6% of its smaller 131k context window on basic tasks without executing a single meaningful verification.</td>
         </tr>
         <tr>
-          <td>Lit review workflow</td>
-          <td>Dedicated <code>/lit</code> command with consensus mapping and open-question extraction</td>
-          <td>No built-in workflow; constructed conversationally with full reasoning flexibility</td>
-          <td>Deep Research generates editable multi-page reports with a review plan you approve first</td>
-        </tr>
-        <tr>
-          <td>Paper auditing</td>
-          <td>Dedicated <code>/audit</code> — compares paper claims vs. code for reproducibility mismatches</td>
-          <td>Can analyze paper + code together if uploaded, but no automated pipeline</td>
-          <td><strong>Autonomous execution</strong> — When routed through an IDE like Antigravity, it can actively download referenced GitHub repositories (e.g., <code>helper.nb</code>) and verify claims against local mathematical solvers.</td>
-        </tr>
-        <tr>
-          <td>Reproducibility</td>
-          <td><span class="str">High</span> — <code>/replicate</code> runs plans in sandboxed Docker; GPU burst via Modal / RunPod</td>
-          <td><span class="str">Moderate</span> — code execution available, but no sandbox or GPU burst</td>
-          <td><span class="str">High</span> — Natively runs source code (e.g., <code>wolframscript</code>) to strictly evaluate complex symbolic identities against published results.</td>
-        </tr>
-
-        <tr class="cat-row"><td colspan="4">Reasoning &amp; synthesis</td></tr>
-        <tr>
-          <td>Math reasoning</td>
-          <td><strong>Script-Based</strong> — Relies on generating external scripts (e.g., Python/SymPy) to verify trigonometric identities mathematically.</td>
-          <td><strong>Intrinsic</strong> — Adaptive extended thinking; strong on rigorous proofs and geometric arguments.</td>
-          <td><strong>Script Execution &amp; Integration</strong> — Avoids "hallucinated typos" by actively downloading supplemental Mathematica code and natively evaluating it with <code>FullSimplify[]</code> to achieve absolute verification of complex proofs.</td>
-        </tr>
-        <tr>
-          <td>Synthesis style</td>
-          <td>Structured evidence-based briefs; modular outputs (review, draft, compare)</td>
-          <td>Conversational, long-form, creative; adapts to user expertise level</td>
-          <td>Structured reports exportable to Google Docs; analyzes geometry directly from renders or sketches</td>
-        </tr>
-
-        <tr class="cat-row"><td colspan="4">Practical considerations</td></tr>
-        <tr>
-          <td>Execution Speed</td>
-          <td><strong>Slow</strong> — Requires time to orchestrate agents, write scripts, execute them locally, and read terminal output.</td>
-          <td><strong>Fast</strong> — Single-shot inference with chain-of-thought routing.</td>
-          <td><strong>High Efficiency</strong> — Complex, multi-lemma verification relying on external code download and execution runs remarkably fast when routed via Antigravity.</td>
-        </tr>
-        <tr>
-          <td>API &amp; Context Burn Rate</td>
-          <td><strong>High Drain</strong> — Multi-agent loops burn tokens rapidly. Exhausted standard API limits in just 2 prompts.</td>
-          <td><strong>Severe Limitations</strong> — Context limits exhaust in minutes. Reaching the limit results in multi-hour lockouts, and starting a new conversation <em>does not reset the limit</em>.</td>
-          <td><strong>Highly Efficient</strong> — Antigravity integration provides a fresh 1M context per session. Complex paper-to-code local verifications burn only 7.0% to 7.2% of the window.</td>
+          <td>API Burn Rate</td>
+          <td><strong>Extremely High</strong> — The background loops of the Feynman Researcher, Reviewer, and Writer agents exhausted standard Opus API limits in just 2 prompts.</td>
+          <td><strong>Sustainable</strong> — Handles the dense recursive loops of multi-agent verification cleanly, avoiding lockout restrictions.</td>
+          <td>Very cheap (~$0.03 per complex prompt) but effectively useless for rigorous academic verification.</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="anim d6">
-    <div class="section-label">Bottom line</div>
-    <h2 class="section-title">Final Verdicts</h2>
+    <div class="section-label">Final Bottom line</div>
+    <h2 class="section-title">The Engine Verdict</h2>
   </div>
 
   <div class="verdicts">
-    <div class="verdict v-teal anim d5">
-      <h4>Feynman</h4>
-      <p><strong>Highly Recommended (with a caveat):</strong> Brilliant for structured literature reviews and deep research. However, because it drains API usage quickly, you should strictly use it paired with Gemini via Antigravity, which guarantees a fresh 1M context reset per session.</p>
+    <div class="verdict v-purple anim d5">
+      <h4>Feynman + Opus 4.6</h4>
+      <p><strong>Impractical for Multi-Agent Workflows:</strong> While Opus possesses incredible reasoning power for LaTeX and drafting, the Feynman multi-agent architecture burns through its API and context limits instantly. You will hit multi-hour lockouts before completing a single thorough literature review.</p>
     </div>
-    <div class="verdict v-purple anim d6">
-      <h4>Claude Opus 4.6</h4>
-      <p><strong>Impractical for Heavy Workloads:</strong> While it performs well on initial literature reviews, it is crippled by extreme usage constraints. Limits are hit within minutes, users face multi-hour lockouts, and context caps do not refresh on new conversations.</p>
+    <div class="verdict v-amber anim d6">
+      <h4>Feynman + Gemini 3.1</h4>
+      <p><strong>The Superior Scientific Auditor:</strong> By routing Feynman through Gemini 3.1 in the Antigravity IDE, you bypass API lockouts (gaining a fresh 1M context per session). More importantly, the engine actually utilizes local tools—cloning GitHub repos, running Mathematica scripts, and delivering absolute mathematical certainty on geometric proofs.</p>
     </div>
-    <div class="verdict v-amber anim d7">
-      <h4>Gemini 3.1 (via Antigravity)</h4>
-      <p><strong>The Superior Choice for Scientific Auditing:</strong> Excels at complex proof verification. It autonomously locates mathematical dependencies on GitHub, downloads them, and evaluates them natively (e.g., via <code>wolframscript</code>), all while burning only ~7% of its massive context window. <em>(Note: Avoid open models like <code>gpt-oss-120b</code>, which provide false, unverified "rubber-stamp" approvals).</em></p>
+    <div class="verdict v-teal anim d7">
+      <h4>Feynman + Open Models</h4>
+      <p><strong>Avoid for Strict Academic Work:</strong> Models like <code>gpt-oss-120b</code> may be fast and cheap, but they act as "rubber-stampers." They will confidently tell you a proof is correct without executing any underlying math or code to verify it.</p>
     </div>
   </div>
 
   <footer class="footer">
-    Comparison compiled April 2026 <span class="dot">&middot;</span> Refined via Antigravity IDE constraints
+    Final Comparison compiled April 2026 <span class="dot">&middot;</span> Refined via Feynman Multi-Agent Experimental Results
   </footer>
 
 </div>
