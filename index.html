@@ -431,6 +431,12 @@ code {
           <td>Deep Research generates editable multi-page reports with a review plan you approve first</td>
         </tr>
         <tr>
+          <td>Provenance &amp; Tracking</td>
+          <td><strong>Explicit</strong> — Generates dedicated provenance logs detailing search queries, read papers, and verification notes.</td>
+          <td><strong>Implicit</strong> — Relies on conversation history.</td>
+          <td><strong>Implicit</strong> — Citations provided, but search strategy is handled implicitly by the Deep Research agent.</td>
+        </tr>
+        <tr>
           <td>Paper auditing</td>
           <td>Dedicated <code>/audit</code> — compares paper claims vs. code for reproducibility mismatches</td>
           <td>Can analyze paper + code together if uploaded, but no automated pipeline</td>
@@ -471,6 +477,12 @@ code {
 
         <tr class="cat-row"><td colspan="4">Practical considerations</td></tr>
         <tr>
+          <td>API / Token Consumption</td>
+          <td><strong>Extremely High</strong> — Multi-agent orchestration (e.g., <code>/lit</code>) can exhaust standard Opus/API limits in just 1-2 prompts.</td>
+          <td><strong>Moderate</strong> — 1:1 input/output token usage.</td>
+          <td><strong>Included</strong> — Compute costs for multi-step agents are abstracted into the subscription tier.</td>
+        </tr>
+        <tr>
           <td>Access &amp; pricing</td>
           <td>Open source, local CLI; free (bring your own API keys)</td>
           <td>$20/mo Pro or API at $5 / $25 per M tokens; AWS, Azure, GCP</td>
@@ -500,7 +512,7 @@ code {
   <div class="verdicts">
     <div class="verdict v-teal anim d5">
       <h4>Feynman</h4>
-      <p>Choose when you need a <strong>structured research pipeline</strong> — systematic lit reviews with consensus mapping, paper-to-code audits, or automated replication experiments with GPU access. Workflow guardrails and citation verification come built in.</p>
+      <p>Choose when you need a <strong>structured research pipeline</strong>. Workflow guardrails and explicit provenance tracking come built in, allowing for incredibly deep synthesis, but be prepared for massive API token burn rates due to the multi-agent architecture.</p>
     </div>
     <div class="verdict v-purple anim d6">
       <h4>Claude Opus 4.6</h4>
@@ -508,7 +520,7 @@ code {
     </div>
     <div class="verdict v-amber anim d7">
       <h4>Gemini 3.1</h4>
-      <p>Choose when you want <strong>verification & broad discovery</strong> — Deep Research generates polished reports from 100+ sources. Deep Think pushes into symbolic verification to stress-test your mathematical lemmas. Best for native multimodal visual analysis.</p>
+      <p>Choose when you want <strong>verification & broad discovery</strong> — Deep Research generates polished reports from 100+ sources without burning your API keys. Deep Think pushes into symbolic verification to stress-test your mathematical lemmas.</p>
     </div>
   </div>
 
