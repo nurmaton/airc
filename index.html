@@ -361,7 +361,7 @@ code {
         <h3>Feynman + Opus 4.6</h3>
       </div>
       <div class="tc-type">High Reason, High Limit</div>
-      <p>Orchestrating Feynman using Claude Opus 4.6. Excellent for deep structural literature reviews, but constrained heavily by rigid API and context limits.</p>
+      <p>Orchestrating Feynman using Claude Opus 4.6. Excellent for deep structural literature reviews, but constrained heavily by rigid API limits.</p>
     </div>
     <div class="tool-card opus anim d4">
       <div class="tc-head">
@@ -413,15 +413,21 @@ code {
 
         <tr class="cat-row"><td colspan="4">Infrastructure Constraints</td></tr>
         <tr>
+          <td>Authentication &amp; Routing</td>
+          <td><strong>Direct API Key</strong> — Uses `feynman model login` Option 1. Connects directly to the provider's billing meter.</td>
+          <td><strong>OAuth Proxy</strong> — Uses `feynman model login` Option 2 (OAuth) and routes through `google-antigravity`. Bypasses raw API keys by piggybacking on the IDE subscription.</td>
+          <td>Can be routed via direct API (e.g., OpenRouter) or through the Antigravity OAuth proxy.</td>
+        </tr>
+        <tr>
           <td>Context Window Management</td>
           <td><strong>Severe Limitations</strong> — Context limits are exhausted in minutes. Starting a new session does not reset the limit, crippling continuous research.</td>
-          <td><strong>Highly Efficient</strong> — Antigravity integration provides a fresh 1M context per session. Complex, multi-lemma code verifications burn only 7.0% to 7.2% of the window.</td>
+          <td><strong>Highly Efficient</strong> — The Antigravity OAuth proxy provides a fresh 1M context per session. Complex, multi-lemma code verifications burn only 7.0% to 7.2% of the window.</td>
           <td><strong>Inefficient</strong> — Burned ~25.6% of its smaller 131k context window on basic tasks without executing a single meaningful verification.</td>
         </tr>
         <tr>
           <td>API Burn Rate</td>
-          <td><strong>Extremely High</strong> — The background loops of the Feynman Researcher, Reviewer, and Writer agents exhausted standard Opus API limits in just 2 prompts.</td>
-          <td><strong>Sustainable</strong> — Handles the dense recursive loops of multi-agent verification cleanly, avoiding lockout restrictions.</td>
+          <td><strong>Extremely High</strong> — The background loops of the Feynman Researcher, Reviewer, and Writer agents hit the hard limits of direct API billing in just 2 prompts.</td>
+          <td><strong>Sustainable</strong> — Handles the dense recursive loops of multi-agent verification cleanly, avoiding lockout restrictions by utilizing the IDE proxy.</td>
           <td>Very cheap (~$0.03 per complex prompt) but effectively useless for rigorous academic verification.</td>
         </tr>
       </tbody>
@@ -436,11 +442,11 @@ code {
   <div class="verdicts">
     <div class="verdict v-purple anim d5">
       <h4>Feynman + Opus 4.6</h4>
-      <p><strong>Impractical for Multi-Agent Workflows:</strong> While Opus possesses incredible reasoning power for LaTeX and drafting, the Feynman multi-agent architecture burns through its API and context limits instantly. You will hit multi-hour lockouts before completing a single thorough literature review.</p>
+      <p><strong>Impractical for Multi-Agent Workflows:</strong> While Opus possesses incredible reasoning power for LaTeX and drafting, connecting Feynman via a direct API key burns through its API limits instantly. You will hit multi-hour lockouts before completing a single thorough literature review.</p>
     </div>
     <div class="verdict v-amber anim d6">
       <h4>Feynman + Gemini 3.1</h4>
-      <p><strong>The Superior Scientific Auditor:</strong> By routing Feynman through Gemini 3.1 in the Antigravity IDE, you bypass API lockouts (gaining a fresh 1M context per session). More importantly, the engine actually utilizes local tools—cloning GitHub repos, running Mathematica scripts, and delivering absolute mathematical certainty on geometric proofs.</p>
+      <p><strong>The Superior Scientific Auditor:</strong> By selecting the OAuth route and connecting to `google-antigravity`, you bypass API lockouts and gain a fresh 1M context per session. This allows the engine to actively utilize local tools—cloning GitHub repos, running Mathematica scripts, and delivering absolute mathematical certainty on geometric proofs.</p>
     </div>
     <div class="verdict v-teal anim d7">
       <h4>Feynman + Open Models</h4>
